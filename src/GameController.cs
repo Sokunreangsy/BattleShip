@@ -7,14 +7,10 @@ namespace MyGame
 {
 
     /// <summary>
-
-/// The GameController is responsible for controlling the game,
-
-/// managing user input, and displaying the current state of the
-
-/// game.
-
-/// </summary>
+	/// The GameController is responsible for controlling the game,
+	/// managing user input, and displaying the current state of the
+	/// game.
+	/// </summary>
     public static class GameController
     {
         private static BattleShipsGame _theGame;
@@ -26,11 +22,11 @@ namespace MyGame
         private static AIOption _aiSetting;
 
         /// <summary>
-    /// Returns the current state of the game, indicating which screen is
-    /// currently being used
-    /// </summary>
-    /// <value>The current state</value>
-    /// <returns>The current state</returns>
+		/// Returns the current state of the game, indicating which screen is
+		/// currently being used
+		/// </summary>
+		/// <value>The current state</value>
+		/// <returns>The current state</returns>
         public static GameState CurrentState
         {
             get
@@ -40,10 +36,10 @@ namespace MyGame
         }
 
         /// <summary>
-    /// Returns the human player.
-    /// </summary>
-    /// <value>the human player</value>
-    /// <returns>the human player</returns>
+		/// Returns the human player.
+		/// </summary>
+		/// <value>the human player</value>
+		/// <returns>the human player</returns>
         public static Player HumanPlayer
         {
             get
@@ -53,10 +49,10 @@ namespace MyGame
         }
 
         /// <summary>
-    /// Returns the computer player.
-    /// </summary>
-    /// <value>the computer player</value>
-    /// <returns>the conputer player</returns>
+		/// Returns the computer player.
+		/// </summary>
+		/// <value>the computer player</value>
+		/// <returns>the conputer player</returns>
         public static Player ComputerPlayer
         {
             get
@@ -75,11 +71,11 @@ namespace MyGame
         }
 
         /// <summary>
-    /// Starts a new game.
-    /// </summary>
-    /// <remarks>
-    /// Creates an AI player based upon the _aiSetting.
-    /// </remarks>
+		/// Starts a new game.
+		/// </summary>
+		/// <remarks>
+		/// Creates an AI player based upon the _aiSetting.
+		/// </remarks>
         public static void StartGame()
         {
             if (_theGame != null)
@@ -120,8 +116,8 @@ namespace MyGame
         }
 
         /// <summary>
-    /// Stops listening to the old game once a new game is started
-    /// </summary>
+		/// Stops listening to the old game once a new game is started
+		/// </summary>
 
         private static void EndGame()
         {
@@ -131,11 +127,11 @@ namespace MyGame
         }
 
         /// <summary>
-    /// Listens to the game grids for any changes and redraws the screen
-    /// when the grids change
-    /// </summary>
-    /// <param name="sender">the grid that changed</param>
-    /// <param name="args">not used</param>
+		/// Listens to the game grids for any changes and redraws the screen
+		/// when the grids change
+		/// </summary>
+		/// <param name="sender">the grid that changed</param>
+		/// <param name="args">not used</param>
         private static void GridChanged(object sender, EventArgs args)
         {
             DrawScreen();
@@ -163,13 +159,13 @@ namespace MyGame
         }
 
         /// <summary>
-    /// Listens for attacks to be completed.
-    /// </summary>
-    /// <param name="sender">the game</param>
-    /// <param name="result">the result of the attack</param>
-    /// <remarks>
-    /// Displays a message, plays sound and redraws the screen
-    /// </remarks>
+		/// Listens for attacks to be completed.
+		/// </summary>
+		/// <param name="sender">the game</param>
+		/// <param name="result">the result of the attack</param>
+		/// <remarks>
+		/// Displays a message, plays sound and redraws the screen
+		/// </remarks>
         private static void AttackCompleted(object sender, AttackResult result)
         {
             bool isHuman;
@@ -228,13 +224,13 @@ namespace MyGame
         }
 
         /// <summary>
-    /// Completes the deployment phase of the game and
-    /// switches to the battle mode (Discovering state)
-    /// </summary>
-    /// <remarks>
-    /// This adds the players to the game before switching
-    /// state.
-    /// </remarks>
+		/// Completes the deployment phase of the game and
+		/// switches to the battle mode (Discovering state)
+		/// </summary>
+		/// <remarks>
+		/// This adds the players to the game before switching
+		/// state.
+		/// </remarks>
         public static void EndDeployment()
         {
             // deploy the players
@@ -245,13 +241,13 @@ namespace MyGame
         }
 
         /// <summary>
-    /// Gets the player to attack the indicated row and column.
-    /// </summary>
-    /// <param name="row">the row to attack</param>
-    /// <param name="col">the column to attack</param>
-    /// <remarks>
-    /// Checks the attack result once the attack is complete
-    /// </remarks>
+		/// Gets the player to attack the indicated row and column.
+		/// </summary>
+		/// <param name="row">the row to attack</param>
+		/// <param name="col">the column to attack</param>
+		/// <remarks>
+		/// Checks the attack result once the attack is complete
+		/// </remarks>
         public static void Attack(int row, int col)
         {
             AttackResult result;
@@ -260,11 +256,11 @@ namespace MyGame
         }
 
         /// <summary>
-    /// Gets the AI to attack.
-    /// </summary>
-    /// <remarks>
-    /// Checks the attack result once the attack is complete.
-    /// </remarks>
+		/// Gets the AI to attack.
+		/// </summary>
+		/// <remarks>
+		/// Checks the attack result once the attack is complete.
+		/// </remarks>
         private static void AIAttack()
         {
             AttackResult result;
@@ -273,13 +269,13 @@ namespace MyGame
         }
 
         /// <summary>
-    /// Checks the results of the attack and switches to
-    /// Ending the Game if the result was game over.
-    /// </summary>
-    /// <param name="result">the result of the last
-    /// attack</param>
-    /// <remarks>Gets the AI to attack if the result switched
-    /// to the AI player.</remarks>
+		/// Checks the results of the attack and switches to
+		/// Ending the Game if the result was game over.
+		/// </summary>
+		/// <param name="result">the result of the last
+		/// attack</param>
+		/// <remarks>Gets the AI to attack if the result switched
+		/// to the AI player.</remarks>
         private static void CheckAttackResult(AttackResult result)
         {
             switch (result.Value)
@@ -300,13 +296,13 @@ namespace MyGame
         }
 
         /// <summary>
-    /// Handles the user SwinGame.
-    /// </summary>
-    /// <remarks>
-    /// Reads key and mouse input and converts these into
-    /// actions for the game to perform. The actions
-    /// performed depend upon the state of the game.
-    /// </remarks>
+		/// Handles the user SwinGame.
+		/// </summary>
+		/// <remarks>
+		/// Reads key and mouse input and converts these into
+		/// actions for the game to perform. The actions
+		/// performed depend upon the state of the game.
+		/// </remarks>
         public static void HandleUserInput()
         {
             // Read incoming input events
@@ -361,11 +357,11 @@ namespace MyGame
         }
 
         /// <summary>
-    /// Draws the current state of the game to the screen.
-    /// </summary>
-    /// <remarks>
-    /// What is drawn depends upon the state of the game.
-    /// </remarks>
+		/// Draws the current state of the game to the screen.
+		/// </summary>
+		/// <remarks>
+		/// What is drawn depends upon the state of the game.
+		/// </remarks>
         public static void DrawScreen()
         {
             UtilityFunctions.DrawBackground();
@@ -421,10 +417,10 @@ namespace MyGame
         }
 
         /// <summary>
-    /// Move the game to a new state. The current state is maintained
-    /// so that it can be returned to.
-    /// </summary>
-    /// <param name="state">the new game state</param>
+		/// Move the game to a new state. The current state is maintained
+		/// so that it can be returned to.
+		/// </summary>
+		/// <param name="state">the new game state</param>
         public static void AddNewState(GameState state)
         {
             _state.Push(state);
@@ -432,9 +428,9 @@ namespace MyGame
         }
 
         /// <summary>
-    /// End the current state and add in the new state.
-    /// </summary>
-    /// <param name="newState">the new state of the game</param>
+		/// End the current state and add in the new state.
+		/// </summary>
+		/// <param name="newState">the new state of the game</param>
         public static void SwitchState(GameState newState)
         {
             EndCurrentState();
@@ -442,17 +438,17 @@ namespace MyGame
         }
 
         /// <summary>
-    /// Ends the current state, returning to the prior state
-    /// </summary>
+		/// Ends the current state, returning to the prior state
+		/// </summary>
         public static void EndCurrentState()
         {
             _state.Pop();
         }
 
         /// <summary>
-    /// Sets the difficulty for the next level of the game.
-    /// </summary>
-    /// <param name="setting">the new difficulty level</param>
+		/// Sets the difficulty for the next level of the game.
+		/// </summary>
+		/// <param name="setting">the new difficulty level</param>
         public static void SetDifficulty(AIOption setting)
         {
             _aiSetting = setting;

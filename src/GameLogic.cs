@@ -5,7 +5,12 @@ using System.Diagnostics;
 using Microsoft.VisualBasic;
 
 static class GameLogic
-    {
+    {	
+		/// <summary>
+		/// The Main is responsible for the main of the game,
+		/// Opens a new Graphics Window, Load Resources and do the
+		/// game.
+		/// </summary>
         public static void Main()
         {
             // Opens a new Graphics Window
