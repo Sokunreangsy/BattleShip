@@ -5,6 +5,14 @@ using SwinGameSDK;
 
 namespace MyGame
 {
+    /// <summary>
+    /// The SeaGrid is the grid upon which the ships are deployed.
+    /// </summary>
+    /// <remarks>
+    /// The grid is viewable via the ISeaGrid interface as a read only
+    /// grid. This can be used in conjuncture with the SeaGridAdapter to
+    /// mask the position of the ships.
+    /// </remarks>
     public class SeaGrid : ISeaGrid
     {
         private const int _WIDTH = 10;
@@ -15,15 +23,15 @@ namespace MyGame
         private int _ShipsKilled = 0;
 
         /// <summary>
-    /// The sea grid has changed and should be redrawn.
-    /// </summary>
+        /// The sea grid has changed and should be redrawn.
+        /// </summary>
         public event EventHandler Changed;
 
         /// <summary>
-    /// The width of the sea grid.
-    /// </summary>
-    /// <value>The width of the sea grid.</value>
-    /// <returns>The width of the sea grid.</returns>
+        /// The width of the sea grid.
+        /// </summary>
+        /// <value>The width of the sea grid.</value>
+        /// <returns>The width of the sea grid.</returns>
         public int Width
         {
             get
@@ -33,10 +41,10 @@ namespace MyGame
         }
 
         /// <summary>
-    /// The height of the sea grid
-    /// </summary>
-    /// <value>The height of the sea grid</value>
-    /// <returns>The height of the sea grid</returns>
+        /// The height of the sea grid
+        /// </summary>
+        /// <value>The height of the sea grid</value>
+        /// <returns>The height of the sea grid</returns>
         public int Height
         {
             get
@@ -46,8 +54,8 @@ namespace MyGame
         }
 
         /// <summary>
-    /// ShipsKilled returns the number of ships killed
-    /// </summary>
+        /// ShipsKilled returns the number of ships killed
+        /// </summary>
         public int ShipsKilled
         {
             get
@@ -57,10 +65,10 @@ namespace MyGame
         }
 
         /// <summary>
-    /// Show the tile view
-    /// </summary>
-    /// <param name="x">x coordinate of the tile</param>
-    /// <param name="y">y coordiante of the tile</param>
+        /// Show the tile view
+        /// </summary>
+        /// <param name="x">x coordinate of the tile</param>
+        /// <param name="y">y coordiante of the tile</param>
     /// <returns></returns>
         public TileView this [int x, int y]
         {
@@ -68,8 +76,8 @@ namespace MyGame
         }
 
         /// <summary>
-    /// AllDeployed checks if all the ships are deployed
-    /// </summary>
+        /// AllDeployed checks if all the ships are deployed
+        /// </summary>
         public bool AllDeployed
         {
             get
@@ -85,8 +93,8 @@ namespace MyGame
         }
 
         /// <summary>
-    /// SeaGrid constructor, a seagrid has a number of tiles stored in an array
-    /// </summary>
+        /// SeaGrid constructor, a seagrid has a number of tiles stored in an array
+        /// </summary>
         public SeaGrid(Dictionary<ShipName, Ship> ships)
         {
             // fill array with empty Tiles
@@ -103,12 +111,12 @@ namespace MyGame
         }
 
         /// <summary>
-    /// MoveShips allows for ships to be placed on the seagrid
-    /// </summary>
-    /// <param name="row">the row selected</param>
-    /// <param name="col">the column selected</param>
-    /// <param name="ship">the ship selected</param>
-    /// <param name="direction">the direction the ship is going</param>
+        /// MoveShips allows for ships to be placed on the seagrid
+        /// </summary>
+        /// <param name="row">the row selected</param>
+        /// <param name="col">the column selected</param>
+        /// <param name="ship">the ship selected</param>
+        /// <param name="direction">the direction the ship is going</param>
         public void MoveShip(int row, int col, ShipName ship, Direction direction)
         {
             Ship newShip = _Ships[ship];
@@ -117,12 +125,12 @@ namespace MyGame
         }
 
         /// <summary>
-    /// AddShip add a ship to the SeaGrid
-    /// </summary>
-    /// <param name="row">row coordinate</param>
-    /// <param name="col">col coordinate</param>
-    /// <param name="direction">direction of ship</param>
-    /// <param name="newShip">the ship</param>
+        /// AddShip add a ship to the SeaGrid
+        /// </summary>
+        /// <param name="row">row coordinate</param>
+        /// <param name="col">col coordinate</param>
+        /// <param name="direction">direction of ship</param>
+        /// <param name="newShip">the ship</param>
         private void AddShip(int row, int col, Direction direction, Ship newShip)
         {
             try
@@ -172,12 +180,12 @@ namespace MyGame
         }
 
         /// <summary>
-    /// HitTile hits a tile at a row/col, and whatever tile has been hit, a
-    /// result will be displayed.
-    /// </summary>
-    /// <param name="row">the row at which is being shot</param>
-    /// <param name="col">the cloumn at which is being shot</param>
-    /// <returns>An attackresult (hit, miss, sunk, shotalready)</returns>
+        /// HitTile hits a tile at a row/col, and whatever tile has been hit, a
+        /// result will be displayed.
+        /// </summary>
+        /// <param name="row">the row at which is being shot</param>
+        /// <param name="col">the cloumn at which is being shot</param>
+        /// <returns>An attackresult (hit, miss, sunk, shotalready)</returns>
         public AttackResult HitTile(int row, int col)
         {
             try

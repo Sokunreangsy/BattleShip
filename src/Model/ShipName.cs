@@ -1,5 +1,9 @@
 ﻿namespace MyGame
 {
+    /// <summary>
+    /// The names of all of the ships in the game
+    /// </summary>
+    /// <remarks></remarks>
     public enum ShipName
     {
         None = 0,

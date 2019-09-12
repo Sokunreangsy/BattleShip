@@ -2,6 +2,10 @@
 
 namespace MyGame
 {
+    /// <summary>
+    /// The ISeaGrid defines the read only interface of a Grid. This
+    /// allows each player to see and attack their opponents grid.
+    /// </summary>
     public interface ISeaGrid
     {
         int Width { get; }
@@ -9,8 +13,8 @@ namespace MyGame
         int Height { get; }
 
         /// <summary>
-    /// Indicates that the grid has changed.
-    /// </summary>
+        /// Indicates that the grid has changed.
+        /// </summary>
         event EventHandler Changed;
 
         /// <summary>
@@ -26,11 +30,11 @@ namespace MyGame
         { get; }
 
         /// <summary>
-    /// Mark the indicated tile as shot.
-    /// </summary>
-    /// <param name="row">the row of the tile</param>
-    /// <param name="col">the column of the tile</param>
-    /// <returns>the result of the attack</returns>
+        /// Mark the indicated tile as shot.
+        /// </summary>
+        /// <param name="row">the row of the tile</param>
+        /// <param name="col">the column of the tile</param>
+        /// <returns>the result of the attack</returns>
         AttackResult HitTile(int row, int col);
     }
 }
