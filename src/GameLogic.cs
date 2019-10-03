@@ -1,37 +1,32 @@
-﻿using SwinGameSDK;
+
+using Microsoft.VisualBasic;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+//using System.Data;
 using System.Diagnostics;
-using Microsoft.VisualBasic;
-
+using SwinGameSDK;
 static class GameLogic
-    {	
-		/// <summary>
-		/// The Main is responsible for the main of the game,
-		/// Opens a new Graphics Window, Load Resources and do the
-		/// game.
-		/// </summary>
-        public static void Main()
-        {
-            // Opens a new Graphics Window
-            SwinGame.OpenGraphicsWindow("Battle Ships", 800, 600);
+{
+	public static void Main()
+	{
+		//Opens a new Graphics Window
+		SwinGame.OpenGraphicsWindow("Battle Ships", 800, 600);
 
-            // Load Resources
-            GameResources.LoadResources();
+		//Load Resources
+		GameResources.LoadResources();
 
-            SwinGame.PlayMusic(GameResources.GameMusic("Background"));
+		SwinGame.PlayMusic(GameResources.GameMusic("Background"));
 
-            // Game Loop
-            do
-            {
-                GameController.HandleUserInput();
-                GameController.DrawScreen();
-            }
-            while (!((SwinGame.WindowCloseRequested() == true) | ((int)GameController.CurrentState == (int)GameState.Quitting)));
+		//Game Loop
+		do {
+			GameController.HandleUserInput();
+			GameController.DrawScreen();
+		} while (!(SwinGame.WindowCloseRequested() == true | GameController.CurrentState == GameState.Quitting));
 
-            SwinGame.StopMusic();
-
-            // Free Resources and Close Audio, to end the program.
-            GameResources.FreeResources();
-        }
-    }
+		SwinGame.StopMusic();
+		HighScoreController.SaveScores();
+		//Free Resources and Close Audio, to end the program.
+		GameResources.FreeResources();
+	}
+}
