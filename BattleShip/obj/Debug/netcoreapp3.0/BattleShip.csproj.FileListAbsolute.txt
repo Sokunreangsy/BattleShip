@@ -1,0 +1,13 @@
+C:\Users\sokun\OneDrive\Desktop\BattleShip\BattleShip\bin\Debug\netcoreapp3.0\BattleShip.exe
+C:\Users\sokun\OneDrive\Desktop\BattleShip\BattleShip\bin\Debug\netcoreapp3.0\BattleShip.deps.json
+C:\Users\sokun\OneDrive\Desktop\BattleShip\BattleShip\bin\Debug\netcoreapp3.0\BattleShip.runtimeconfig.json
+C:\Users\sokun\OneDrive\Desktop\BattleShip\BattleShip\bin\Debug\netcoreapp3.0\BattleShip.runtimeconfig.dev.json
+C:\Users\sokun\OneDrive\Desktop\BattleShip\BattleShip\bin\Debug\netcoreapp3.0\BattleShip.dll
+C:\Users\sokun\OneDrive\Desktop\BattleShip\BattleShip\bin\Debug\netcoreapp3.0\BattleShip.pdb
+C:\Users\sokun\OneDrive\Desktop\BattleShip\BattleShip\bin\Debug\netcoreapp3.0\SwinGame.dll
+C:\Users\sokun\OneDrive\Desktop\BattleShip\BattleShip\obj\Debug\netcoreapp3.0\BattleShip.csprojAssemblyReference.cache
+C:\Users\sokun\OneDrive\Desktop\BattleShip\BattleShip\obj\Debug\netcoreapp3.0\BattleShip.AssemblyInfoInputs.cache
+C:\Users\sokun\OneDrive\Desktop\BattleShip\BattleShip\obj\Debug\netcoreapp3.0\BattleShip.AssemblyInfo.cs
+C:\Users\sokun\OneDrive\Desktop\BattleShip\BattleShip\obj\Debug\netcoreapp3.0\BattleShip.csproj.CopyComplete
+C:\Users\sokun\OneDrive\Desktop\BattleShip\BattleShip\obj\Debug\netcoreapp3.0\BattleShip.dll
+C:\Users\sokun\OneDrive\Desktop\BattleShip\BattleShip\obj\Debug\netcoreapp3.0\BattleShip.pdb
